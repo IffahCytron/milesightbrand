@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Milesight IoT Solutions Malaysia | Cytron Technologies</title>
+  <style>
+    .MS_milesight-brand-intro {
+      --MS_blue: #005bd8;
+      --MS_blueDark: #073a8d;
+      --MS_cyan: #20c4dc;
+      --MS_ink: #1f2630;
+      --MS_text: #44505f;
+      --MS_muted: #6c7787;
+      --MS_line: #dfe8f2;
+      --MS_card: #ffffff;
+      --MS_shadow: 0 14px 36px rgba(23, 54, 92, 0.08);
+      background: linear-gradient(180deg, #f8fbff 0%, #ffffff 44%, #f7fafd 100%);
+      border: 1px solid #e8eef6;
+      border-radius: 12px;
+      color: var(--MS_ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      margin: 0 auto 22px;
+      max-width: 1180px;
+      overflow: hidden;
+      width: 100%;
+    }
+
+    .MS_milesight-brand-intro .MS_intro-shell {
+      padding: clamp(20px, 3vw, 34px);
+    }
+
+    .MS_milesight-brand-intro .MS_trust-hero {
+      animation: MS_fade-up 620ms ease both;
+      display: grid;
+      gap: clamp(20px, 3vw, 34px);
+      grid-template-columns: minmax(0, 0.86fr) minmax(380px, 1fr);
+    }
+
+    .MS_milesight-brand-intro .MS_intro-copy {
+      align-content: center;
+      display: grid;
+      gap: 14px;
+    }
+
+    .MS_milesight-brand-intro .MS_intro-heading {
+      color: var(--MS_ink);
+      font-size: clamp(1.85rem, 3.2vw, 3.15rem);
+      font-weight: 760;
+      letter-spacing: 0;
+      line-height: 1.08;
+      margin: 0;
+      max-width: 760px;
+    }
+
+    .MS_milesight-brand-intro .MS_intro-subcopy {
+      color: var(--MS_text);
+      font-size: clamp(0.98rem, 1.25vw, 1.08rem);
+      line-height: 1.68;
+      margin: 0;
+      max-width: 770px;
+    }
+
+    .MS_milesight-brand-intro .MS_trust-grid {
+      display: grid;
+      gap: 12px;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .MS_milesight-brand-intro .MS_trust-card {
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid var(--MS_line);
+      border-radius: 10px;
+      box-shadow: 0 10px 28px rgba(23, 54, 92, 0.06);
+      min-height: 178px;
+      padding: 18px;
+      transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+    }
+
+    .MS_milesight-brand-intro .MS_trust-card:hover {
+      border-color: rgba(0, 91, 216, 0.28);
+      box-shadow: var(--MS_shadow);
+      transform: translateY(-3px);
+    }
+
+    .MS_milesight-brand-intro .MS_trust-icon {
+      background: linear-gradient(135deg, rgba(0, 91, 216, 0.12), rgba(32, 196, 220, 0.16));
+      border-radius: 9px;
+      color: var(--MS_blue);
+      display: grid;
+      height: 36px;
+      margin-bottom: 16px;
+      place-items: center;
+      transition: background 180ms ease, color 180ms ease, transform 180ms ease;
+      width: 36px;
+    }
+
+    .MS_milesight-brand-intro .MS_icon-svg {
+      display: block;
+      height: 24px;
+      stroke-width: 2;
+      transition: transform 180ms ease;
+      width: 24px;
+    }
+
+    .MS_milesight-brand-intro .MS_icon-accent {
+      color: var(--MS_cyan);
+    }
+
+    .MS_milesight-brand-intro .MS_trust-card:hover .MS_trust-icon {
+      background: linear-gradient(135deg, rgba(0, 91, 216, 0.16), rgba(32, 196, 220, 0.22));
+      color: var(--MS_blueDark);
+      transform: translateY(-2px);
+    }
+
+    .MS_milesight-brand-intro .MS_trust-card:hover .MS_icon-svg {
+      transform: scale(1.04);
+    }
+
+    .MS_milesight-brand-intro .MS_trust-title {
+      color: var(--MS_ink);
+      font-size: 1rem;
+      letter-spacing: 0;
+      line-height: 1.25;
+      margin: 0 0 8px;
+    }
+
+    .MS_milesight-brand-intro .MS_trust-copy {
+      color: var(--MS_muted);
+      font-size: 0.9rem;
+      line-height: 1.55;
+      margin: 0;
+    }
+
+    .MS_milesight-brand-intro .MS_info-section {
+      animation: MS_fade-up 620ms ease 120ms both;
+      background: var(--MS_card);
+      border: 1px solid var(--MS_line);
+      border-radius: 12px;
+      box-shadow: var(--MS_shadow);
+      margin-top: 18px;
+      overflow: hidden;
+    }
+
+    .MS_milesight-brand-intro .MS_tab-list {
+      background: #f2f6fb;
+      border-bottom: 1px solid var(--MS_line);
+      display: flex;
+      gap: 4px;
+      overflow-x: auto;
+      overscroll-behavior-x: contain;
+      padding: 8px;
+      scroll-behavior: smooth;
+      scrollbar-width: thin;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .MS_milesight-brand-intro .MS_tab-control {
+      appearance: none;
+      background: transparent;
+      border: 0;
+      border-radius: 8px;
+      color: #5f6b7a;
+      cursor: pointer;
+      flex: 1 0 0;
+      font-family: inherit;
+      font-size: 0.93rem;
+      font-weight: 750;
+      min-height: 42px;
+      min-width: max-content;
+      padding: 0 14px;
+      transition: background 180ms ease, box-shadow 180ms ease, color 180ms ease;
+      white-space: nowrap;
+    }
+
+    .MS_milesight-brand-intro .MS_tab-control:hover {
+      background: rgba(255, 255, 255, 0.7);
+      color: var(--MS_blueDark);
+    }
+
+    .MS_milesight-brand-intro .MS_tab-control.MS_tab-active {
+      background: #ffffff;
+      box-shadow: 0 8px 20px rgba(23, 54, 92, 0.08);
+      color: var(--MS_blue);
+    }
+
+    .MS_milesight-brand-intro .MS_panel-wrap {
+      padding: clamp(18px, 2.6vw, 28px);
+    }
+
+    .MS_milesight-brand-intro .MS_tab-panel {
+      display: none;
+    }
+
+    .MS_milesight-brand-intro .MS_tab-panel.MS_panel-active {
+      animation: MS_panel-in 260ms ease both;
+      display: block;
+    }
+
+    .MS_milesight-brand-intro .MS_panel-text {
+      color: var(--MS_text);
+      font-size: 0.98rem;
+      line-height: 1.7;
+      margin: 0;
+      max-width: 920px;
+    }
+
+    .MS_milesight-brand-intro .MS_panel-action {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .MS_milesight-brand-intro .MS_cta-link {
+      align-items: center;
+      background: var(--MS_blue);
+      border-radius: 8px;
+      color: #ffffff;
+      display: inline-flex;
+      font-size: 0.94rem;
+      font-weight: 800;
+      justify-content: center;
+      min-height: 42px;
+      padding: 0 18px;
+      text-decoration: none;
+      transition: box-shadow 180ms ease, transform 180ms ease;
+    }
+
+    .MS_milesight-brand-intro .MS_cta-link:hover {
+      box-shadow: 0 12px 26px rgba(0, 91, 216, 0.18);
+      transform: translateY(-2px);
+    }
+
+    .MS_milesight-brand-intro .MS_cert-layout {
+      display: grid;
+      gap: 20px;
+      grid-template-columns: minmax(0, 0.86fr) minmax(320px, 0.7fr);
+    }
+
+    .MS_milesight-brand-intro .MS_cert-intro {
+      align-content: center;
+      display: grid;
+      gap: 12px;
+    }
+
+    .MS_milesight-brand-intro .MS_cert-note {
+      color: var(--MS_muted);
+      font-size: 0.9rem;
+      line-height: 1.6;
+      margin: 4px 0 0;
+    }
+
+    .MS_milesight-brand-intro .MS_cert-carousel {
+      min-width: 0;
+      position: relative;
+    }
+
+    .MS_milesight-brand-intro .MS_cert-viewport {
+      border: 1px solid var(--MS_line);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .MS_milesight-brand-intro .MS_cert-track {
+      display: flex;
+      transition: transform 360ms ease;
+      will-change: transform;
+    }
+
+    .MS_milesight-brand-intro .MS_cert-slide {
+      background: #ffffff;
+      display: grid;
+      flex: 0 0 100%;
+      grid-template-columns: 126px minmax(0, 1fr);
+      min-width: 100%;
+    }
+
+    .MS_milesight-brand-intro .MS_cert-image-button {
+      appearance: none;
+      background: linear-gradient(150deg, #eef6ff 0%, #ffffff 100%);
+      border: 0;
+      border-right: 1px solid var(--MS_line);
+      cursor: zoom-in;
+      display: grid;
+      min-height: 148px;
+      padding: 12px;
+      place-items: center;
+    }
+
+    .MS_milesight-brand-intro .MS_cert-image {
+      border: 1px solid #dce7f2;
+      border-radius: 6px;
+      box-shadow: 0 8px 18px rgba(23, 54, 92, 0.12);
+      display: block;
+      height: 122px;
+      max-width: 100%;
+      object-fit: contain;
+      width: auto;
+    }
+
+    .MS_milesight-brand-intro .MS_cert-body {
+      align-content: center;
+      display: grid;
+      padding: 18px;
+    }
+
+    .MS_milesight-brand-intro .MS_cert-model {
+      color: var(--MS_ink);
+      font-size: 1.18rem;
+      letter-spacing: 0;
+      margin: 0 0 7px;
+    }
+
+    .MS_milesight-brand-intro .MS_cert-label {
+      color: var(--MS_blue);
+      font-size: 0.88rem;
+      font-weight: 780;
+      margin: 0;
+    }
+
+    .MS_milesight-brand-intro .MS_cert-controls {
+      align-items: center;
+      display: flex;
+      justify-content: space-between;
+      margin-top: 10px;
+    }
+
+    .MS_milesight-brand-intro .MS_cert-dots {
+      display: flex;
+      gap: 7px;
+    }
+
+    .MS_milesight-brand-intro .MS_cert-dot {
+      appearance: none;
+      background: #c7d5e7;
+      border: 0;
+      border-radius: 999px;
+      cursor: pointer;
+      height: 8px;
+      padding: 0;
+      transition: background 180ms ease, width 180ms ease;
+      width: 8px;
+    }
+
+    .MS_milesight-brand-intro .MS_cert-dot.MS_cert-dot-active {
+      background: var(--MS_blue);
+      width: 24px;
+    }
+
+    .MS_milesight-brand-intro .MS_cert-arrow-group {
+      display: flex;
+      gap: 8px;
+    }
+
+    .MS_milesight-brand-intro .MS_cert-arrow {
+      align-items: center;
+      appearance: none;
+      background: #ffffff;
+      border: 1px solid rgba(0, 91, 216, 0.24);
+      border-radius: 999px;
+      color: var(--MS_blue);
+      cursor: pointer;
+      display: inline-flex;
+      font-family: inherit;
+      font-size: 1.1rem;
+      font-weight: 800;
+      height: 34px;
+      justify-content: center;
+      line-height: 1;
+      padding: 0;
+      transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+      width: 34px;
+    }
+
+    .MS_milesight-brand-intro .MS_cert-arrow:hover {
+      border-color: rgba(0, 91, 216, 0.42);
+      box-shadow: 0 8px 18px rgba(0, 91, 216, 0.12);
+      transform: translateY(-2px);
+    }
+
+    .MS_milesight-brand-intro .MS_cert-preview {
+      align-items: center;
+      background: rgba(9, 29, 58, 0.74);
+      display: flex;
+      inset: 0;
+      justify-content: center;
+      padding: 22px;
+      position: fixed;
+      z-index: 9999;
+    }
+
+    .MS_milesight-brand-intro .MS_cert-preview[hidden] {
+      display: none;
+    }
+
+    .MS_milesight-brand-intro .MS_cert-preview-panel {
+      background: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 24px 70px rgba(0, 0, 0, 0.26);
+      max-height: min(90vh, 880px);
+      max-width: min(92vw, 780px);
+      overflow: auto;
+      padding: 16px;
+      position: relative;
+    }
+
+    .MS_milesight-brand-intro .MS_cert-preview-image {
+      display: block;
+      height: auto;
+      max-width: 100%;
+      width: 100%;
+    }
+
+    .MS_milesight-brand-intro .MS_cert-preview-close {
+      align-items: center;
+      appearance: none;
+      background: var(--MS_blue);
+      border: 0;
+      border-radius: 999px;
+      color: #ffffff;
+      cursor: pointer;
+      display: inline-flex;
+      font-family: inherit;
+      font-size: 0.9rem;
+      font-weight: 800;
+      height: 36px;
+      justify-content: center;
+      padding: 0;
+      position: absolute;
+      right: 12px;
+      top: 12px;
+      width: 36px;
+    }
+
+    @keyframes MS_fade-up {
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes MS_panel-in {
+      from {
+        opacity: 0;
+        transform: translateY(6px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .MS_milesight-brand-intro .MS_trust-hero,
+      .MS_milesight-brand-intro .MS_info-section,
+      .MS_milesight-brand-intro .MS_tab-panel.MS_panel-active {
+        animation-duration: 0.01ms;
+      }
+
+      .MS_milesight-brand-intro .MS_cert-track,
+      .MS_milesight-brand-intro .MS_tab-control,
+      .MS_milesight-brand-intro .MS_trust-card,
+      .MS_milesight-brand-intro .MS_cta-link,
+      .MS_milesight-brand-intro .MS_cert-arrow {
+        transition-duration: 0.01ms;
+      }
+    }
+
+    @media (max-width: 980px) {
+      .MS_milesight-brand-intro .MS_trust-hero,
+      .MS_milesight-brand-intro .MS_cert-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .MS_milesight-brand-intro .MS_trust-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 760px) {
+      .MS_milesight-brand-intro {
+        border-radius: 10px;
+      }
+
+      .MS_milesight-brand-intro .MS_intro-shell {
+        padding: 16px;
+      }
+
+      .MS_milesight-brand-intro .MS_trust-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .MS_milesight-brand-intro .MS_trust-card {
+        min-height: auto;
+        padding: 16px;
+      }
+
+      .MS_milesight-brand-intro .MS_tab-list {
+        gap: 6px;
+        padding: 7px;
+      }
+
+      .MS_milesight-brand-intro .MS_tab-control {
+        flex: 0 0 auto;
+        font-size: 0.88rem;
+        min-height: 38px;
+        padding: 0 13px;
+      }
+
+      .MS_milesight-brand-intro .MS_panel-wrap {
+        padding: 14px;
+      }
+
+      .MS_milesight-brand-intro .MS_cert-slide {
+        grid-template-columns: 108px minmax(0, 1fr);
+      }
+
+      .MS_milesight-brand-intro .MS_cert-image-button {
+        min-height: 126px;
+        padding: 10px;
+      }
+
+      .MS_milesight-brand-intro .MS_cert-image {
+        height: 102px;
+      }
+
+      .MS_milesight-brand-intro .MS_cert-body {
+        padding: 14px;
+      }
+
+      .MS_milesight-brand-intro .MS_cert-model {
+        font-size: 1.02rem;
+      }
+    }
+
+    @media (max-width: 430px) {
+      .MS_milesight-brand-intro .MS_cert-slide {
+        grid-template-columns: 1fr;
+      }
+
+      .MS_milesight-brand-intro .MS_cert-image-button {
+        border-bottom: 1px solid var(--MS_line);
+        border-right: 0;
+      }
+
+      .MS_milesight-brand-intro .MS_intro-heading {
+        font-size: 1.72rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="MS_milesight-brand-intro" tabindex="-1">
+    <div class="MS_intro-shell">
+      <section class="MS_trust-hero" aria-labelledby="MS_intro-heading">
+        <div class="MS_intro-copy">
+          <h1 class="MS_intro-heading" id="MS_intro-heading">Milesight IoT Solutions, Supported Locally by Cytron</h1>
+          <p class="MS_intro-subcopy">
+            From smart buildings to factory monitoring, explore practical IoT solutions powered by Milesight with local technical guidance and support from Cytron Technologies in Malaysia.
+          </p>
+        </div>
+
+        <div class="MS_trust-grid" aria-label="Milesight and Cytron trust points">
+          <article class="MS_trust-card">
+            <div class="MS_trust-icon" aria-hidden="true">
+              <svg class="MS_icon-svg" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" focusable="false">
+                <path d="M17 30h14a4 4 0 0 1 4 4v5H13v-5a4 4 0 0 1 4-4Z" />
+                <path d="M19 39v3" />
+                <path d="M29 39v3" />
+                <path d="M24 30V18" />
+                <path class="MS_icon-accent" d="M18 19a8 8 0 0 1 12 0" />
+                <path class="MS_icon-accent" d="M13 14a15 15 0 0 1 22 0" />
+                <circle class="MS_icon-accent" cx="24" cy="18" r="2.5" />
+              </svg>
+            </div>
+            <h2 class="MS_trust-title">Built for Real Deployments</h2>
+            <p class="MS_trust-copy">Reliable LoRaWAN sensors, gateways, and IoT infrastructure designed for scalable monitoring projects.</p>
+          </article>
+          <article class="MS_trust-card">
+            <div class="MS_trust-icon" aria-hidden="true">
+              <svg class="MS_icon-svg" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" focusable="false">
+                <path d="M24 6 36 11v10c0 8.5-4.7 15.2-12 20-7.3-4.8-12-11.5-12-20V11l12-5Z" />
+                <circle class="MS_icon-accent" cx="24" cy="24" r="4" />
+                <path class="MS_icon-accent" d="M24 16v3" />
+                <path class="MS_icon-accent" d="M24 29v3" />
+                <path class="MS_icon-accent" d="M16 24h3" />
+                <path class="MS_icon-accent" d="M29 24h3" />
+                <path class="MS_icon-accent" d="m18.5 18.5 2.1 2.1" />
+                <path class="MS_icon-accent" d="m27.4 27.4 2.1 2.1" />
+                <path class="MS_icon-accent" d="m29.5 18.5-2.1 2.1" />
+                <path class="MS_icon-accent" d="m20.6 27.4-2.1 2.1" />
+              </svg>
+            </div>
+            <h2 class="MS_trust-title">Local Technical Support</h2>
+            <p class="MS_trust-copy">Work with a local team that understands integration challenges, deployment planning, and industrial environments.</p>
+          </article>
+          <article class="MS_trust-card">
+            <div class="MS_trust-icon" aria-hidden="true">
+              <svg class="MS_icon-svg" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" focusable="false">
+                <path d="M8 40h32" />
+                <path d="M11 40V23l8 5v-5l8 5v-9h10v21" />
+                <path d="M31 19v-7h6v7" />
+                <path class="MS_icon-accent" d="M16 33h3" />
+                <path class="MS_icon-accent" d="M24 33h3" />
+                <path class="MS_icon-accent" d="M32 27h2" />
+                <path class="MS_icon-accent" d="M32 33h2" />
+                <path class="MS_icon-accent" d="M40 14a8 8 0 0 1 0 10" />
+                <path class="MS_icon-accent" d="M43 11a13 13 0 0 1 0 16" />
+              </svg>
+            </div>
+            <h2 class="MS_trust-title">Ready for Industry Projects</h2>
+            <p class="MS_trust-copy">Suitable for smart buildings, environmental monitoring, energy tracking, cold rooms, factories, and remote sensing applications.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="MS_info-section" aria-label="Milesight solution information">
+        <div class="MS_inline-tabs">
+          <div class="MS_tab-list" role="tablist" aria-label="Milesight information tabs">
+            <button class="MS_tab-control MS_tab-active" type="button" role="tab" id="MS_tab_applications" aria-selected="true" aria-controls="MS_panel_applications" data-ms-tab="applications">Common Applications</button>
+            <button class="MS_tab-control" type="button" role="tab" id="MS_tab_cytron" aria-selected="false" aria-controls="MS_panel_cytron" data-ms-tab="cytron">Why Cytron</button>
+            <button class="MS_tab-control" type="button" role="tab" id="MS_tab_certification" aria-selected="false" aria-controls="MS_panel_certification" data-ms-tab="certification">Certification</button>
+            <button class="MS_tab-control" type="button" role="tab" id="MS_tab_contact" aria-selected="false" aria-controls="MS_panel_contact" data-ms-tab="contact">Talk to Cytron</button>
+          </div>
+
+          <div class="MS_panel-wrap">
+            <div class="MS_tab-panel MS_panel-active" role="tabpanel" id="MS_panel_applications" aria-labelledby="MS_tab_applications" data-ms-panel="applications">
+              <p class="MS_panel-text">Milesight solutions are commonly used for smart building monitoring, factory environments, air quality tracking, occupancy monitoring, energy management, cold room monitoring, and LoRaWAN-based remote sensing projects.</p>
+            </div>
+            <div class="MS_tab-panel" role="tabpanel" id="MS_panel_cytron" aria-labelledby="MS_tab_cytron" data-ms-panel="cytron">
+              <p class="MS_panel-text">Cytron helps Malaysian system integrators and project teams move faster with local product availability, technical consultation, integration guidance, and project-oriented support for Milesight deployments.</p>
+            </div>
+            <div class="MS_tab-panel" role="tabpanel" id="MS_panel_certification" aria-labelledby="MS_tab_certification" data-ms-panel="certification">
+              <div class="MS_cert-layout">
+                <div class="MS_cert-intro">
+                  <p class="MS_panel-text">Selected Milesight devices supplied by Cytron Technologies are supported with SIRIM QAS International Certificate of Conformity documentation for better project confidence.</p>
+                  <p class="MS_cert-note">Please contact Cytron for the latest project and product compliance confirmation.</p>
+                </div>
+                <div class="MS_cert-carousel" data-ms-cert-carousel>
+                  <div class="MS_cert-viewport">
+                    <div class="MS_cert-track">
+                      <article class="MS_cert-slide" aria-label="Certificate slide 1 of 2">
+                        <button class="MS_cert-image-button" type="button" data-ms-preview-src="https://raw.githubusercontent.com/IffahCytron/milesightbrand/main/monitoringsensorcoc.jpg" data-ms-preview-alt="Expanded SIRIM QAS International Certificate of Conformity for Milesight EM320-TH-915M" aria-label="Enlarge EM320-TH-915M certificate image">
+                          <img class="MS_cert-image" src="https://raw.githubusercontent.com/IffahCytron/milesightbrand/main/monitoringsensorcoc.jpg" alt="SIRIM QAS International Certificate of Conformity for Milesight EM320-TH-915M" />
+                        </button>
+                        <div class="MS_cert-body">
+                          <h3 class="MS_cert-model">EM320-TH-915M</h3>
+                          <p class="MS_cert-label">Wireless Monitoring Sensor</p>
+                        </div>
+                      </article>
+                      <article class="MS_cert-slide" aria-label="Certificate slide 2 of 2">
+                        <button class="MS_cert-image-button" type="button" data-ms-preview-src="https://raw.githubusercontent.com/IffahCytron/milesightbrand/main/gatewaycoc.jpg" data-ms-preview-alt="Expanded SIRIM QAS International Certificate of Conformity for Milesight UG65-L08GL-915M-EA" aria-label="Enlarge UG65-L08GL-915M-EA certificate image">
+                          <img class="MS_cert-image" src="https://raw.githubusercontent.com/IffahCytron/milesightbrand/main/gatewaycoc.jpg" alt="SIRIM QAS International Certificate of Conformity for Milesight UG65-L08GL-915M-EA" />
+                        </button>
+                        <div class="MS_cert-body">
+                          <h3 class="MS_cert-model">UG65-L08GL-915M-EA</h3>
+                          <p class="MS_cert-label">Wireless Gateway</p>
+                        </div>
+                      </article>
+                    </div>
+                  </div>
+                  <div class="MS_cert-controls" aria-label="Certificate carousel controls">
+                    <div class="MS_cert-dots" aria-label="Certificate slide indicators"></div>
+                    <div class="MS_cert-arrow-group">
+                      <button class="MS_cert-arrow" type="button" data-ms-cert-prev aria-label="Previous certificate">‹</button>
+                      <button class="MS_cert-arrow" type="button" data-ms-cert-next aria-label="Next certificate">›</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="MS_tab-panel" role="tabpanel" id="MS_panel_contact" aria-labelledby="MS_tab_contact" data-ms-panel="contact">
+              <p class="MS_panel-text">Planning a smart building or industrial IoT deployment? Talk to Cytron to explore suitable Milesight devices, gateway architecture, and deployment direction for your project requirements.</p>
+              <div class="MS_panel-action">
+                <a class="MS_cta-link" href="https://my.cytron.io/contact-us">Talk to Cytron</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="MS_cert-preview" data-ms-cert-preview hidden>
+          <div class="MS_cert-preview-panel">
+            <button class="MS_cert-preview-close" type="button" data-ms-cert-preview-close aria-label="Close certificate image">×</button>
+            <img class="MS_cert-preview-image" data-ms-cert-preview-image src="https://raw.githubusercontent.com/IffahCytron/milesightbrand/main/monitoringsensorcoc.jpg" alt="Expanded SIRIM QAS International Certificate of Conformity for Milesight EM320-TH-915M" />
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var MS_roots = document.querySelectorAll(".MS_milesight-brand-intro");
+
+      MS_roots.forEach(function (MS_root) {
+        var MS_tabs = Array.prototype.slice.call(MS_root.querySelectorAll("[data-ms-tab]"));
+        var MS_panels = Array.prototype.slice.call(MS_root.querySelectorAll("[data-ms-panel]"));
+
+        function MS_setTab(MS_key) {
+          MS_tabs.forEach(function (MS_tab) {
+            var MS_isActive = MS_tab.getAttribute("data-ms-tab") === MS_key;
+            MS_tab.classList.toggle("MS_tab-active", MS_isActive);
+            MS_tab.setAttribute("aria-selected", MS_isActive ? "true" : "false");
+
+            if (MS_isActive && typeof MS_tab.scrollIntoView === "function") {
+              MS_tab.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
+            }
+          });
+
+          MS_panels.forEach(function (MS_panel) {
+            MS_panel.classList.toggle("MS_panel-active", MS_panel.getAttribute("data-ms-panel") === MS_key);
+          });
+        }
+
+        MS_tabs.forEach(function (MS_tab) {
+          MS_tab.addEventListener("click", function () {
+            MS_setTab(MS_tab.getAttribute("data-ms-tab"));
+          });
+        });
+
+        var MS_carousels = Array.prototype.slice.call(MS_root.querySelectorAll("[data-ms-cert-carousel]"));
+
+        MS_carousels.forEach(function (MS_carousel) {
+          var MS_track = MS_carousel.querySelector(".MS_cert-track");
+          var MS_slides = Array.prototype.slice.call(MS_carousel.querySelectorAll(".MS_cert-slide"));
+          var MS_prev = MS_carousel.querySelector("[data-ms-cert-prev]");
+          var MS_next = MS_carousel.querySelector("[data-ms-cert-next]");
+          var MS_dotsWrap = MS_carousel.querySelector(".MS_cert-dots");
+          var MS_current = 0;
+
+          if (!MS_track || !MS_slides.length || !MS_prev || !MS_next || !MS_dotsWrap) {
+            return;
+          }
+
+          MS_slides.forEach(function (MS_slide, MS_index) {
+            var MS_dot = document.createElement("button");
+            MS_dot.className = "MS_cert-dot";
+            MS_dot.type = "button";
+            MS_dot.setAttribute("aria-label", "Show certificate slide " + (MS_index + 1));
+            MS_dot.addEventListener("click", function () {
+              MS_goTo(MS_index);
+            });
+            MS_dotsWrap.appendChild(MS_dot);
+          });
+
+          var MS_dots = Array.prototype.slice.call(MS_dotsWrap.querySelectorAll(".MS_cert-dot"));
+
+          function MS_goTo(MS_index) {
+            MS_current = (MS_index + MS_slides.length) % MS_slides.length;
+            MS_track.style.transform = "translateX(-" + MS_current * 100 + "%)";
+
+            MS_slides.forEach(function (MS_slide, MS_slideIndex) {
+              MS_slide.setAttribute("aria-hidden", MS_slideIndex === MS_current ? "false" : "true");
+            });
+
+            MS_dots.forEach(function (MS_dot, MS_dotIndex) {
+              var MS_isActive = MS_dotIndex === MS_current;
+              MS_dot.classList.toggle("MS_cert-dot-active", MS_isActive);
+              MS_dot.setAttribute("aria-current", MS_isActive ? "true" : "false");
+            });
+          }
+
+          MS_prev.addEventListener("click", function () {
+            MS_goTo(MS_current - 1);
+          });
+
+          MS_next.addEventListener("click", function () {
+            MS_goTo(MS_current + 1);
+          });
+
+          MS_goTo(0);
+        });
+
+        var MS_preview = MS_root.querySelector("[data-ms-cert-preview]");
+        var MS_previewImage = MS_root.querySelector("[data-ms-cert-preview-image]");
+        var MS_previewClose = MS_root.querySelector("[data-ms-cert-preview-close]");
+        var MS_previewButtons = Array.prototype.slice.call(MS_root.querySelectorAll("[data-ms-preview-src]"));
+
+        function MS_openPreview(MS_src, MS_alt) {
+          if (!MS_preview || !MS_previewImage) {
+            return;
+          }
+          MS_previewImage.src = MS_src;
+          MS_previewImage.alt = MS_alt || "Expanded certificate image";
+          MS_preview.hidden = false;
+        }
+
+        function MS_closePreview() {
+          if (MS_preview) {
+            MS_preview.hidden = true;
+          }
+        }
+
+        MS_previewButtons.forEach(function (MS_button) {
+          MS_button.addEventListener("click", function () {
+            MS_openPreview(MS_button.getAttribute("data-ms-preview-src"), MS_button.getAttribute("data-ms-preview-alt"));
+          });
+        });
+
+        if (MS_previewClose) {
+          MS_previewClose.addEventListener("click", MS_closePreview);
+        }
+
+        if (MS_preview) {
+          MS_preview.addEventListener("click", function (MS_event) {
+            if (MS_event.target === MS_preview) {
+              MS_closePreview();
+            }
+          });
+        }
+
+        MS_root.addEventListener("keydown", function (MS_event) {
+          if (MS_event.key !== "Escape") {
+            return;
+          }
+
+          if (MS_preview) {
+            MS_preview.hidden = true;
+          }
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
