@@ -32,19 +32,30 @@
 
     .MS_milesight-brand-intro .MS_trust-hero {
       animation: MS_fade-up 620ms ease both;
+      background:
+        linear-gradient(90deg, rgba(4, 19, 48, 0.94) 0%, rgba(5, 40, 93, 0.82) 46%, rgba(5, 40, 93, 0.34) 100%),
+        url("https://raw.githubusercontent.com/IffahCytron/milesightbrand/main/milesight%20%26%20cytron.jpeg") right center / contain no-repeat,
+        linear-gradient(135deg, #061935 0%, #0a4d9d 100%);
+      border-radius: 12px;
       display: grid;
       gap: clamp(20px, 3vw, 34px);
       grid-template-columns: minmax(0, 0.86fr) minmax(380px, 1fr);
+      min-height: 330px;
+      overflow: hidden;
+      padding: clamp(22px, 3.2vw, 38px);
+      position: relative;
     }
 
     .MS_milesight-brand-intro .MS_intro-copy {
       align-content: center;
       display: grid;
       gap: 14px;
+      position: relative;
+      z-index: 1;
     }
 
     .MS_milesight-brand-intro .MS_intro-heading {
-      color: var(--MS_ink);
+      color: #ffffff;
       font-size: clamp(1.85rem, 3.2vw, 3.15rem);
       font-weight: 760;
       letter-spacing: 0;
@@ -54,7 +65,7 @@
     }
 
     .MS_milesight-brand-intro .MS_intro-subcopy {
-      color: var(--MS_text);
+      color: rgba(255, 255, 255, 0.84);
       font-size: clamp(0.98rem, 1.25vw, 1.08rem);
       line-height: 1.68;
       margin: 0;
@@ -65,11 +76,13 @@
       display: grid;
       gap: 12px;
       grid-template-columns: repeat(3, minmax(0, 1fr));
+      position: relative;
+      z-index: 1;
     }
 
     .MS_milesight-brand-intro .MS_trust-card {
-      background: rgba(255, 255, 255, 0.92);
-      border: 1px solid var(--MS_line);
+      background: rgba(255, 255, 255, 0.94);
+      border: 1px solid rgba(255, 255, 255, 0.72);
       border-radius: 10px;
       box-shadow: 0 10px 28px rgba(23, 54, 92, 0.06);
       min-height: 178px;
@@ -477,6 +490,14 @@
         grid-template-columns: 1fr;
       }
 
+      .MS_milesight-brand-intro .MS_trust-hero {
+        background:
+          linear-gradient(180deg, rgba(4, 19, 48, 0.92) 0%, rgba(5, 40, 93, 0.78) 58%, rgba(5, 40, 93, 0.42) 100%),
+          url("https://raw.githubusercontent.com/IffahCytron/milesightbrand/main/milesight%20%26%20cytron.jpeg") center top / contain no-repeat,
+          linear-gradient(135deg, #061935 0%, #0a4d9d 100%);
+        min-height: 0;
+      }
+
       .MS_milesight-brand-intro .MS_trust-grid {
         grid-template-columns: repeat(3, minmax(0, 1fr));
       }
@@ -559,7 +580,7 @@
     <div class="MS_intro-shell">
       <section class="MS_trust-hero" aria-labelledby="MS_intro-heading">
         <div class="MS_intro-copy">
-          <h1 class="MS_intro-heading" id="MS_intro-heading">Milesight IoT Solutions, Supported Locally by Cytron</h1>
+          <h1 class="MS_intro-heading" id="MS_intro-heading">Milesight IoT, Backed by Cytron</h1>
           <p class="MS_intro-subcopy">
             From smart buildings to factory monitoring, explore practical IoT solutions powered by Milesight with local technical guidance and support from Cytron Technologies in Malaysia.
           </p>
